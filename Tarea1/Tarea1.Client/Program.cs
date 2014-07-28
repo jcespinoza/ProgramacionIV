@@ -45,7 +45,8 @@ namespace Tarea1.Client
         private static void executeExerciseTwo()
         {
             Console.WriteLine("Enter a number to calculate its greatest prime factor:");
-            int readNumber = readAnInteger(-1);
+            long readNumber = readALong(-1);
+            Console.WriteLine("Calculating...");
             Console.WriteLine("The greatest prime factor of {0} is {1}", readNumber, math.GreatestPrimeFactor(readNumber));
         }
 
@@ -85,6 +86,20 @@ namespace Tarea1.Client
             try
             {
                 readInteger = Convert.ToInt32(Console.ReadLine());
+            }
+            catch (Exception ex)
+            {
+                readInteger = defaultValue;
+            }
+            return readInteger;
+        }
+
+        static long readALong(long defaultValue)
+        {
+            long readInteger = defaultValue;
+            try
+            {
+                readInteger = Convert.ToInt64(Console.ReadLine());
             }
             catch (Exception ex)
             {

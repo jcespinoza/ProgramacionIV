@@ -32,12 +32,13 @@ namespace Tarea1
             return true;
         }
 
-        public int GreatestPrimeFactor(int number)
+        public long GreatestPrimeFactor(long number)
         {
-            return GetPrimeFactors(number).Last();
+            int factor = GetPrimeFactors(number).LastOrDefault();
+            return (factor == 0)? number: factor;
         }
 
-        public List<int> GetPrimeFactors(int number)
+        public List<int> GetPrimeFactors(long number)
         {
             if (number <= 0)
                 return new List<int>();
@@ -53,7 +54,7 @@ namespace Tarea1
             return factors;
         }
 
-        public bool IsDivisibleBy(int multiple, int testSubject)
+        public bool IsDivisibleBy(int multiple, long testSubject)
         {
             if (multiple == 0)
                 return false;
