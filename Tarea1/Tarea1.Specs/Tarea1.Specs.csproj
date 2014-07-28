@@ -52,12 +52,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GivenAMathContext.cs" />
+    <Compile Include="whenAllArePositive.cs" />
+    <Compile Include="whenMultipleIsZero.cs" />
     <Compile Include="WhenMultiplesAre3And5SumBellow10.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="whenMaxIsNegative.cs" />
     <Compile Include="whenMaxIsZero.cs" />
     <Compile Include="whenMultiplesAreNegative.cs" />
     <Compile Include="whenNoMultipleWereSpecified.cs" />
+    <Compile Include="whenOneIsNegative.cs" />
     <Compile Include="whenTheInputIs1000And3And5.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -20,18 +20,19 @@ namespace Tarea1
             return sum;
         }
 
-        private bool AreAllPositive(int[] values)
+        public bool AreAllPositive(int[] values)
         {
             foreach (int value in values)
-                if (value < 0)
+                if (value <= 0)
                     return false;
             return true;
         }
 
         public bool IsDivisibleBy(int multiple, int testSubject)
         {
+            if (multiple == 0)
+                return false;
             return testSubject%multiple == 0;
         }
-
     }
 }
