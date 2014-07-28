@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{AE758D8F-E8A4-452B-92B5-01FCFA0AD1FE}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{1DFFCD64-BD3A-4C65-8E68-7B8ABA0405EF}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Tarea1.Specs</RootNamespace>
-    <AssemblyName>Tarea1.Specs</AssemblyName>
+    <RootNamespace>Tarea1.Client</RootNamespace>
+    <AssemblyName>Tarea1.Client</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -30,15 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Machine.Specifications">
-      <HintPath>..\packages\Machine.Specifications.0.8.3\lib\net45\Machine.Specifications.dll</HintPath>
-    </Reference>
-    <Reference Include="Machine.Specifications.Clr4">
-      <HintPath>..\packages\Machine.Specifications.0.8.3\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
-    </Reference>
-    <Reference Include="Machine.Specifications.Should">
-      <HintPath>..\packages\Machine.Specifications.Should.0.7.2\lib\net45\Machine.Specifications.Should.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,28 +40,19 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Tarea1">
-      <HintPath>..\Tarea1\bin\Debug\Tarea1.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GivenAMathContext.cs" />
-    <Compile Include="whenAllArePositive.cs" />
-    <Compile Include="whenANonPrimeIsGiven.cs" />
-    <Compile Include="whenAPrimeIsProvided.cs" />
-    <Compile Include="whenMoreThanTwoMultiplesAreProvided.cs" />
-    <Compile Include="whenMultipleIsZero.cs" />
-    <Compile Include="WhenMultiplesAre3And5SumBellow10.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="whenMaxIsNegative.cs" />
-    <Compile Include="whenMaxIsZero.cs" />
-    <Compile Include="whenMultiplesAreNegative.cs" />
-    <Compile Include="whenNoMultipleWereSpecified.cs" />
-    <Compile Include="whenOneIsNegative.cs" />
-    <Compile Include="whenTheInputIs1000And3And5.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tarea1\Tarea1.csproj">
+      <Project>{CA47C6D3-FC36-4B53-A785-230E3BD6EDB8}</Project>
+      <Name>Tarea1</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

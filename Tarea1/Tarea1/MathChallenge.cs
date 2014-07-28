@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Tarea1
@@ -7,20 +8,23 @@ namespace Tarea1
     {
         public int SumMultiples(int max, params int[] multiples)
         {
-            int sum = 0;
-            Console.Write(multiples);
+            int totalSum = 0;
+            
             if (multiples.Count() < 1 || max <= 0 || !AreAllPositive(multiples))
                 return -1;
 
-            for (int i = 1; i < max; i++)
+            for (int natularNumber = 1; natularNumber < max; natularNumber++)
             {
-                if (IsDivisibleBy(multiples[0], i) || (IsDivisibleBy(multiples[1], i)))
-                    sum += i;
+                foreach(int multiple in multiples)
+                {
+                    if(IsDivisibleBy(multiple, natularNumber))
+                        totalSum += natularNumber;
+                }
             }
-            return sum;
+            return totalSum;
         }
 
-        public bool AreAllPositive(int[] values)
+        public bool AreAllPositive(params int[] values)
         {
             foreach (int value in values)
                 if (value <= 0)
@@ -28,11 +32,44 @@ namespace Tarea1
             return true;
         }
 
+        public int GreatestPrimeFactor(int number)
+        {
+            return GetPrimeFactors(number).Last();
+        }
+
+        public List<int> GetPrimeFactors(int number)
+        {
+            if (number == 0)
+                return new List<int>();
+            if (number >= 1 && number <= 3)
+                return new List<int>(){1};
+
+            List<int> factors = new List<int>();
+            for (int i = 2; i < number; i++)
+            {
+                if (IsPrime(i) && IsDivisibleBy(i, number))
+                    factors.Add(i);
+            }
+            return factors;
+        }
+
         public bool IsDivisibleBy(int multiple, int testSubject)
         {
             if (multiple == 0)
                 return false;
             return testSubject%multiple == 0;
+        }
+
+        public bool IsPrime(int number)
+        {
+            if (number > 0 && number <= 3)
+                return true;
+            for (int i = 2; i < number; i++)
+            {
+                if (IsDivisibleBy(i, number))
+                    return false;
+            }
+            return true;
         }
     }
 }
