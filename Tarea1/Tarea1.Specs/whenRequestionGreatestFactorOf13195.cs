@@ -4,7 +4,7 @@ namespace Tarea1.Specs
 {
     public class whenRequestionGreatestFactorOf13195: GivenAMathContext
     {
-        private static int result;
+        private static long result;
         private Because of = () =>
         {
             result = MathInstance.GreatestPrimeFactor(13195);

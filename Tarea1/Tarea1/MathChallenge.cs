@@ -45,8 +45,10 @@ namespace Tarea1
             if (number >= 1 && number <= 3)
                 return new List<int>(){1};
 
-            List<int> factors = new List<int>();
-            for (int i = 1; i < number; i++)
+            List<int> factors = new List<int>(){1};
+            if(IsDivisibleBy(2, number))
+                factors.Add(2);
+            for (int i = 3; i < number; i += 2)
             {
                 if (IsPrime(i) && IsDivisibleBy(i, number))
                     factors.Add(i);
@@ -61,12 +63,13 @@ namespace Tarea1
             return testSubject%multiple == 0;
         }
 
-        public bool IsPrime(int number)
+        public bool IsPrime(long number)
         {
-            if (number < 0) return false;
+            if (number < 0 || IsDivisibleBy(2, number)) return false;
+
             if (number > 0 && number <= 3)
                 return true;
-            for (int i = 2; i < number; i++)
+            for (int i = 3; i < number; i += 2)
             {
                 if (IsDivisibleBy(i, number))
                     return false;
