@@ -77,7 +77,23 @@ namespace Tarea1
             return true;
         }
 
-        public bool IsPalindromic(int number)
+        public long LargestPalindromeProductOfTwoNumbers(int numberOfDigits)
+        {
+            long startingNumber = (long)(Math.Pow(10, numberOfDigits) - 1);
+            long product;
+            for (long i = startingNumber; i > 0 ; i--)
+            {
+                for (long k = startingNumber; k > 0; k--)
+                {
+                    product = i*k;
+                    if (IsPalindromic(product))
+                        return product;
+                }
+            }
+            return 0;
+        }
+
+        public bool IsPalindromic(long number)
         {
             string numberAsString = "" + number;
             if (number < 0)

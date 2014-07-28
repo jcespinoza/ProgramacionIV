@@ -57,7 +57,9 @@
     <Compile Include="whenANonPrimeIsGiven.cs" />
     <Compile Include="whenAPrimeIsProvided.cs" />
     <Compile Include="whenAskingIfANegativeIsPrime.cs" />
+    <Compile Include="whenCheckingANonPalindromic.cs" />
     <Compile Include="whenCheckingAPalindromic.cs" />
+    <Compile Include="whenDigitNumberIsTwo.cs" />
     <Compile Include="whenMoreThanTwoMultiplesAreProvided.cs" />
     <Compile Include="whenMultipleIsZero.cs" />
     <Compile Include="WhenMultiplesAre3And5SumBellow10.cs" />
