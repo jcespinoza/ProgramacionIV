@@ -22,6 +22,7 @@ namespace Tarea1.Client
                         executeExerciseOne();
                         break;
                     case 2:
+                        executeExerciseTwo();
                         break;
                     case 3:
                         break;
@@ -39,6 +40,13 @@ namespace Tarea1.Client
             } while (response != 6);
 
             Console.ReadKey();
+        }
+
+        private static void executeExerciseTwo()
+        {
+            Console.WriteLine("Enter a number to calculate its greatest prime factor:");
+            int readNumber = readAnInteger(-1);
+            Console.WriteLine("The greatest prime factor of {0} is {1}", readNumber, math.GreatestPrimeFactor(readNumber));
         }
 
         private static void executeExerciseOne()
@@ -64,7 +72,7 @@ namespace Tarea1.Client
         {
             Console.WriteLine("\n**Select an exercise**");
             Console.WriteLine("1. Sum of Multiples");
-            Console.WriteLine("2. Suma de Multiplos");
+            Console.WriteLine("2. Greatest Prime Factor");
             Console.WriteLine("3. Ejercicio 3");
             Console.WriteLine("4. Ejercicio 4");
             Console.WriteLine("5. Ejercicio 5");

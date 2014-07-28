@@ -39,13 +39,13 @@ namespace Tarea1
 
         public List<int> GetPrimeFactors(int number)
         {
-            if (number == 0)
+            if (number <= 0)
                 return new List<int>();
             if (number >= 1 && number <= 3)
                 return new List<int>(){1};
 
             List<int> factors = new List<int>();
-            for (int i = 2; i < number; i++)
+            for (int i = 1; i < number; i++)
             {
                 if (IsPrime(i) && IsDivisibleBy(i, number))
                     factors.Add(i);
@@ -62,6 +62,7 @@ namespace Tarea1
 
         public bool IsPrime(int number)
         {
+            if (number < 0) return false;
             if (number > 0 && number <= 3)
                 return true;
             for (int i = 2; i < number; i++)

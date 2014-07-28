@@ -55,6 +55,7 @@
     <Compile Include="whenAllArePositive.cs" />
     <Compile Include="whenANonPrimeIsGiven.cs" />
     <Compile Include="whenAPrimeIsProvided.cs" />
+    <Compile Include="whenAskingIfANegativeIsPrime.cs" />
     <Compile Include="whenMoreThanTwoMultiplesAreProvided.cs" />
     <Compile Include="whenMultipleIsZero.cs" />
     <Compile Include="WhenMultiplesAre3And5SumBellow10.cs" />
@@ -64,6 +65,9 @@
     <Compile Include="whenMultiplesAreNegative.cs" />
     <Compile Include="whenNoMultipleWereSpecified.cs" />
     <Compile Include="whenOneIsNegative.cs" />
+    <Compile Include="whenRequestingAPrimeFactors.cs" />
+    <Compile Include="whenRequestingFactorForZero.cs" />
+    <Compile Include="whenRequestionGreatestFactorOf13195.cs" />
     <Compile Include="whenTheInputIs1000And3And5.cs" />
   </ItemGroup>
   <ItemGroup>
