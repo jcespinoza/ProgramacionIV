@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tarea1
 {
@@ -12,19 +8,30 @@ namespace Tarea1
         public int SumMultiples(int max, params int[] multiples)
         {
             int sum = 0;
-            if (multiples.Count() < 1)
+            Console.Write(multiples);
+            if (multiples.Count() < 1 || max <= 0 || !AreAllPositive(multiples))
                 return -1;
-            else
+
+            for (int i = 1; i < max; i++)
             {
-                for (int i = 0; i < max; i++)
-                {
-                    if ((i%multiples[0] == 0) || (i%multiples[1] == 0))
-                        sum += i;
-                }
+                if (IsDivisibleBy(multiples[0], i) || (IsDivisibleBy(multiples[1], i)))
+                    sum += i;
             }
             return sum;
         }
 
-        
+        private bool AreAllPositive(int[] values)
+        {
+            foreach (int value in values)
+                if (value < 0)
+                    return false;
+            return true;
+        }
+
+        public bool IsDivisibleBy(int multiple, int testSubject)
+        {
+            return testSubject%multiple == 0;
+        }
+
     }
 }
