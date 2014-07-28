@@ -76,5 +76,21 @@ namespace Tarea1
             }
             return true;
         }
+
+        public bool IsPalindromic(int number)
+        {
+            string numberAsString = "" + number;
+            if (number < 0)
+                return false;
+            int lenght = numberAsString.Length;
+            for (int substraction = 0; substraction < numberAsString.Length/2; substraction++)
+            {
+                if (numberAsString.Substring(substraction, 1) == numberAsString.Substring(lenght - substraction - 1))
+                    continue;
+                else
+                    return false;
+            }
+            return true;
+        }
     }
 }

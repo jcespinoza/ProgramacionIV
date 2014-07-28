@@ -53,9 +53,11 @@
   <ItemGroup>
     <Compile Include="GivenAMathContext.cs" />
     <Compile Include="whenAllArePositive.cs" />
+    <Compile Include="whenANegativeIsCheckedTobePalindromic.cs" />
     <Compile Include="whenANonPrimeIsGiven.cs" />
     <Compile Include="whenAPrimeIsProvided.cs" />
     <Compile Include="whenAskingIfANegativeIsPrime.cs" />
+    <Compile Include="whenCheckingAPalindromic.cs" />
     <Compile Include="whenMoreThanTwoMultiplesAreProvided.cs" />
     <Compile Include="whenMultipleIsZero.cs" />
     <Compile Include="WhenMultiplesAre3And5SumBellow10.cs" />

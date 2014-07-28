@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,8 +47,11 @@ namespace Tarea1.Client
         {
             Console.WriteLine("Enter a number to calculate its greatest prime factor:");
             long readNumber = readALong(-1);
+            Stopwatch time = Stopwatch.StartNew();
             Console.WriteLine("Calculating...");
             Console.WriteLine("The greatest prime factor of {0} is {1}", readNumber, math.GreatestPrimeFactor(readNumber));
+            time.Stop();
+            Console.WriteLine("It took {0} s to make the calculation.", time.ElapsedMilliseconds/1000.0);
         }
 
         private static void executeExerciseOne()
