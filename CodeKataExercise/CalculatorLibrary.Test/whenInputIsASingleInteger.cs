@@ -7,7 +7,7 @@ namespace CalculatorLibrary.Test
         private static int input = 98;
         private Because of = () =>
         {
-            functionResult = strCalc.Sum(input.ToString());
+            functionResult = strCalc.Add(input.ToString());
         };
 
         private It shouldReturnTheInput = () =>

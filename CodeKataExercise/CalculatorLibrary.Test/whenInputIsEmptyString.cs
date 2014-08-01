@@ -6,7 +6,7 @@ namespace CalculatorLibrary.Test
     {
         private Because of = () =>
         {
-            functionResult = strCalc.Sum("");
+            functionResult = strCalc.Add("");
         };
 
         private It shouldReturnZero = () =>
