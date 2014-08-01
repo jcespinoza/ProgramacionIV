@@ -9,13 +9,14 @@ namespace CalculatorLibrary
 {
     public class StringCalculator
     {
+        
         public int Add(string numbers)
         {
             int sumToReturn = 0;
             if (string.IsNullOrEmpty(numbers))
                 return 0;
 
-            foreach (string value in numbers.Split(','))
+            foreach (string value in numbers.Split(new[]{"\n", ","}, StringSplitOptions.None))
             {
                 sumToReturn += Convert.ToInt32(value);
             }
