@@ -10,6 +10,8 @@ namespace CalculatorLibrary
     {
         public int Sum(string param)
         {
+            if (param != "0")
+                return Int32.Parse(param);
             return 0;
         }
     }

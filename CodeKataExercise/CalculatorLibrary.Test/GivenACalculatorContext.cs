@@ -10,7 +10,8 @@ namespace CalculatorLibrary.Test
 {
     public class GivenACalculatorContext
     {
-        public static StringCalculator strCalc;
+        protected static int functionResult;
+        protected static StringCalculator strCalc;
         Establish context = () =>
         {
             strCalc = new StringCalculator();
