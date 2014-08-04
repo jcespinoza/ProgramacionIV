@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,13 +40,16 @@ namespace CalculatorLibrary
         private int AddCollection(string[] numbers)
         {
             int sum = 0;
+            List<string> negativeValues = new List<string>();
             foreach (string value in numbers)
             {
                 int intValue = Convert.ToInt32(value);
                 if (intValue < 0)
                 {
-                    throw new Exception(string.Format("Negatives not allowed"));
+                    negativeValues.Add(string.Format("{0} ", intValue));
                 }
+                if(negativeValues.Count > 0)
+                    throw new Exception(string.Format("Negatives not allowed: {0}", string.Concat(negativeValues)));
                 sum += intValue;
             }
             return sum;

@@ -57,6 +57,7 @@
     <Compile Include="WhenInputIsASingleNonZeroDigit.cs" />
     <Compile Include="whenInputIsEmptyString.cs" />
     <Compile Include="whenInputIsTwoCommaSeparatedValues.cs" />
+    <Compile Include="whenNegativesAreGiven.cs" />
     <Compile Include="whenNumbersContainOnlyTheStartingSlashes.cs" />
     <Compile Include="whenTheNewLineIsNotSpecified.cs" />
   </ItemGroup>
