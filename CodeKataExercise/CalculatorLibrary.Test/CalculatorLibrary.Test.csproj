@@ -51,6 +51,7 @@
     <Compile Include="GivenACalculatorContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="whenADelimiterIsGiven.cs" />
+    <Compile Include="whenANegativeIsGivenInParametersNoCustomDelimiter.cs" />
     <Compile Include="whenInputAreCommaSeparatedValues.cs" />
     <Compile Include="whenInputIsASingleInteger.cs" />
     <Compile Include="WhenInputIsASingleNonZeroDigit.cs" />

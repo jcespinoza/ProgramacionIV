@@ -25,20 +25,30 @@ namespace CalculatorLibrary
                 if (numbers[3] != '\n')
                     return 0;
                 string[] nums = numbers.Substring(4).Split(delimiter);
-                foreach (string value in nums)
-                {
-                    sumToReturn += Convert.ToInt32(value);
-                }
+                sumToReturn = AddCollection(nums);
             }
             else
             {
-                foreach (string value in numbers.Split(new[] { "\n", "," }, StringSplitOptions.None))
-                {
-                    sumToReturn += Convert.ToInt32(value);
-                }
+                string[] nums = numbers.Split(new[] {"\n", ","}, StringSplitOptions.None);
+                sumToReturn = AddCollection(nums);
             }
                 
             return sumToReturn;
+        }
+
+        private int AddCollection(string[] numbers)
+        {
+            int sum = 0;
+            foreach (string value in numbers)
+            {
+                int intValue = Convert.ToInt32(value);
+                if (intValue < 0)
+                {
+                    throw new Exception(string.Format("Negatives not allowed"));
+                }
+                sum += intValue;
+            }
+            return sum;
         }
     }
 }
