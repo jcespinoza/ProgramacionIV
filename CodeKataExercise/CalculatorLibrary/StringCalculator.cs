@@ -16,9 +16,26 @@ namespace CalculatorLibrary
             if (string.IsNullOrEmpty(numbers))
                 return 0;
 
-            foreach (string value in numbers.Split(new[]{"\n", ","}, StringSplitOptions.None))
+            if (numbers.StartsWith("//"))
             {
-                sumToReturn += Convert.ToInt32(value);
+                if (numbers.Length < 4)
+                    return 0;
+
+                char delimiter = numbers[2];
+                if (numbers[3] != '\n')
+                    return 0;
+                string[] nums = numbers.Substring(4).Split(delimiter);
+                foreach (string value in nums)
+                {
+                    sumToReturn += Convert.ToInt32(value);
+                }
+            }
+            else
+            {
+                foreach (string value in numbers.Split(new[] { "\n", "," }, StringSplitOptions.None))
+                {
+                    sumToReturn += Convert.ToInt32(value);
+                }
             }
                 
             return sumToReturn;

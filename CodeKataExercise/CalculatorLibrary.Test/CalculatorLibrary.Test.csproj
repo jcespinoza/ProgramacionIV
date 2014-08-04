@@ -50,11 +50,14 @@
   <ItemGroup>
     <Compile Include="GivenACalculatorContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="whenADelimiterIsGiven.cs" />
     <Compile Include="whenInputAreCommaSeparatedValues.cs" />
     <Compile Include="whenInputIsASingleInteger.cs" />
     <Compile Include="WhenInputIsASingleNonZeroDigit.cs" />
     <Compile Include="whenInputIsEmptyString.cs" />
     <Compile Include="whenInputIsTwoCommaSeparatedValues.cs" />
+    <Compile Include="whenNumbersContainOnlyTheStartingSlashes.cs" />
+    <Compile Include="whenTheNewLineIsNotSpecified.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
