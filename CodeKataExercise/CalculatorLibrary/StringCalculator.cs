@@ -45,13 +45,12 @@ namespace CalculatorLibrary
             {
                 int intValue = Convert.ToInt32(value);
                 if (intValue < 0)
-                {
                     negativeValues.Add(string.Format("{0} ", intValue));
-                }
-                if(negativeValues.Count > 0)
-                    throw new Exception(string.Format("Negatives not allowed: {0}", string.Concat(negativeValues)));
-                sum += intValue;
+                if(intValue < 1001)
+                    sum += intValue;
             }
+            if (negativeValues.Count > 0)
+                throw new Exception(string.Format("Negatives not allowed: {0}", string.Concat(negativeValues)));
             return sum;
         }
     }
