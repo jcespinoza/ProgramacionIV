@@ -21,6 +21,8 @@ namespace CalculatorLibrary
             {
                 if (numbers.Length < 4)
                     return 0;
+                if (numbers[2] == '[')
+                    return AddCollection(parseNumbers(numbers));
 
                 char delimiter = numbers[2];
                 if (numbers[3] != '\n')
@@ -35,6 +37,13 @@ namespace CalculatorLibrary
             }
                 
             return sumToReturn;
+        }
+
+        private string[] parseNumbers(string expression)
+        {
+            string[] numbers = {};
+            string[] delimiters = {};
+            return numbers;
         }
 
         private int AddCollection(string[] numbers)

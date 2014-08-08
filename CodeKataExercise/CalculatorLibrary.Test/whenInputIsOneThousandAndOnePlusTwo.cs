@@ -14,4 +14,16 @@ namespace CalculatorLibrary.Test
             functionResult.ShouldEqual(2);
         };
     }
+
+    public class whenCustomDelimiterIsOfLenghtGreaterThanOneChar: GivenACalculatorContext
+    {
+        private Because of = () =>
+        {
+            functionResult = strCalc.Add("//")
+        };
+
+        private It shouldReturnTheirSum = () =>
+        {
+        };
+    }
 }
